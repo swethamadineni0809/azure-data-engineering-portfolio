@@ -41,7 +41,7 @@ def upload_to_adls(file_path, data):
 
 def main():
     data = get_weather()
-    upload_to_adls("weather.json", str(data))
+    upload_to_adls("weather.json", json.dumps(data))
     print("Done ")
 
 if __name__ == "__main__":
