@@ -49,10 +49,48 @@ Orchestration will be handled using Apache Airflow.
 
 ---
 
+## Environment Configuration
+
+This project uses environment variables for configuration.
+
+Create a `.env` file in the project root using the template below:
+
+```bash
+cp .env.example .env
+
+
+---
+
 ## Project Status
 
-## Ingestion Script
-The Python script ingests weather data from OpenWeather API and uploads raw JSON files
-to Azure Data Lake Gen2 (`raw/` container).  
-See `ingestion/weather_api_ingest.py`.
+## Project Status
+
+🚧 **In Progress – Core Data Ingestion Completed**
+
+### ✅ Completed
+- Azure project and resource setup
+- Secure configuration using environment variables (`.env`, `.env.example`)
+- Python-based ingestion from OpenWeather API
+- Support for ingesting data for multiple cities
+- Valid JSON files written to Azure Data Lake Gen2 (raw zone)
+- Partitioned raw data storage using date-based folders
+- No hardcoded values (fully configuration-driven ingestion)
+
+### 🔄 In Progress
+- Raw data querying and exploration layer
+- SQL-based schema-on-read access to raw data
+- Data modeling and transformations using dbt
+
+### ⏭️ Planned
+- dbt staging models to clean and standardize raw data
+- Analytics-ready fact and dimension tables
+- Incremental transformations
+- Data quality tests using dbt
+- Workflow orchestration using Apache Airflow
+- Documentation of production considerations and improvements
+
+This project is being developed incrementally to reflect real-world
+data engineering practices, with a focus on clean architecture,
+configurability, and production readiness.
+
 
