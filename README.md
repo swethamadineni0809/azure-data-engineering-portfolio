@@ -50,4 +50,9 @@ Orchestration will be handled using Apache Airflow.
 ---
 
 ## Project Status
-🚧 In progress – foundation setup completed
+
+## Ingestion Script
+The Python script ingests weather data from OpenWeather API and uploads raw JSON files
+to Azure Data Lake Gen2 (`raw/` container).  
+See `ingestion/weather_api_ingest.py`.
+
